@@ -469,20 +469,11 @@ actionBtn.replaceWith(actionBtn.cloneNode(true));
   addBtn.addEventListener('click', LoadModal);
       
    window.onload = () => { 
-      const th1 = document.querySelectorAll('[table1] th');
-    const th2 = document.querySelectorAll('[table2] th');
-
-    th1.forEach((th, index) => {
-      const width = th.offsetWidth + "px";
-      if (th2[index]) {
-        th2[index].style.width = width;
-      }
-    });
-    //
+     
   const posterInput = document.getElementById("posterInput");
         
   function askForId() {
-    const posterId = prompt("Enter your ID:");
+    const posterId = prompt("Enter your passcode:");
 
     if (posterId) {
       const idRef = ref(db, 'UserIds/' + posterId);
@@ -493,7 +484,7 @@ actionBtn.replaceWith(actionBtn.cloneNode(true));
           SelectAllDataRealtime();
           updateTotals();
         } else {
-          alert("ID not recognized. Try again.");
+          alert("user not recognized. Try again.");
           askForId();
         }
       }).catch((error) => {
